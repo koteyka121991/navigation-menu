@@ -1,0 +1,119 @@
+/*
+Theme name: menu nav
+*/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: rgb(27, 21, 7);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+a {
+  color: rgb(27, 21, 7);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu-nav {
+    margin: 20px auto;
+    max-width: 1000px;
+    
+    ul {
+        display: flex;
+       
+        li {
+            padding-right: 30px;
+            padding-bottom: 20px;
+            
+            ul{
+                opacity: 0; 
+                position: absolute;
+                display: block;
+                border:2px solid wheat;
+                top: -900px;
+                li {
+                    background: slateblue;
+                    border-top:2px solid wheat;
+                    padding: 10px 0;
+                    width: 200px;
+
+                   
+                }
+                
+            }
+        }
+    }
+    li:hover>ul {
+        opacity: 1;
+        top: 50px;
+        transition: 0.5s;
+    }
+    li ul li:hover>ul {
+        opacity: 1;
+        left: 100%;
+        top: 0;
+       
+    }
+}
+
+@media (max-width: 800px) {
+    .menu-nav {
+        ul {
+            display: block;
+           
+            li {
+               padding: 0;
+               width: 100%;
+                
+                ul{
+                    opacity: 1; 
+                    position:absolute;
+                    display: block;
+                    border:2px solid wheat;
+                    top: -900px;
+                    li {
+                        background: slateblue;
+                        border-top:2px solid wheat;
+                        width: 100%;
+                    }
+                    
+                }
+            }
+        }
+        li:hover>ul {
+            opacity: 1;
+            position: relative;
+            top: 0;
+            transition: 0.5s;
+        }
+        li ul li:hover>ul {
+            position: relative;
+            opacity: 1;
+            left: 0;
+            top: 0;
+        }
+}
+}
+
